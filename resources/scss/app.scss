@@ -1,1 +1,49 @@
 @import "node_modules/axentix/src/scss/axentix";
+
+@import "node_modules/axentix/src/scss/axentix";
+@import "node_modules/axentix/src/scss/utilities/_variables";
+@import "node_modules/axentix/src/scss/utilities/_mixins";
+@import "node_modules/axentix/src/scss/utilities/_functions";
+
+.bg-blue {
+    background-color: #212433;
+}
+
+.bg-blue2 {
+    background-color: #181c29;
+}
+
+.bg-blue3 {
+    background-color: #1d2332;
+}
+
+.bd-blue {
+    border-color: #181c29 !important;
+}
+
+.txt-gl4 {
+    color: #f7f7f7 !important;
+}
+
+.table td,
+.table th {
+    border-color: rgb(116, 104, 104) !important;
+}
+
+.table-row:hover {
+    background-color: rgba(235, 235, 235, 0.07) !important;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination li:hover:not(.active) {
+    background-color: rgba(235, 235, 235, 0.07);
+}
+
+.form-material .form-field:not(.form-default) {
+    --form-material-color: #ff7729; /* replace with your color */
+}
+
+#modal {
+    max-width: 300px !important;
+}
