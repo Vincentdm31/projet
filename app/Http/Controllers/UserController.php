@@ -25,7 +25,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect(route('dashboard.index'));
+        return redirect(route('dashboard.index', 'update'));
     }
 
     public function destroy(Request $request)
@@ -35,6 +35,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect(route('dashboard.index'));
+        return redirect(route('dashboard.index', 'delete'));
     }
 }

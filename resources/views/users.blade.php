@@ -50,15 +50,19 @@
 <form id="sortById" action=" {{route('sortBy', 'id')}}"></form>
 
 
-<div class="modal grey light-4 rounded-1" id="modal" data-ax="modal">
-    <p>Confirmer la suppression ?</p>
-    <form method="POST" action="{{route('users.destroy', ['user' => $user->id])}}">
-        @method('DELETE')
-        @csrf
-        <input name="id" id="confirmlabel" hidden type="text">
-        <button id="confirm" class="btn blue">Yes</button>
-    </form>
-    <button class="btn red">No</button>
+<div class="modal bg-blue rounded-1 txt-center" id="modal" data-ax="modal">
+    <p class="txt-gl4 font-s3">Confirmer la suppression ?</p>
+    <div class="grix xs2 gutter-xs7 pb-4">
+
+        <form method="POST" class="txt-right" action="{{route('users.destroy', ['user' => $user->id])}}">
+            @method('DELETE')
+            @csrf
+            <input name="id" id="confirmlabel" hidden type="text">
+            <button id="confirm" class="btn grey light-4 blue-txt rounded-1"><i class="fas fa-check"></i></button>
+        </form>
+        <button data-target="modal" class="btn modal-trigger red dark-3 rounded-1"><i class="fas fa-times"></i></button>
+
+    </div>
 </div>
 
 @endsection
@@ -74,4 +78,24 @@
         document.getElementById('confirmlabel').value = id;
     }
 </script>
+
+<script>
+    let toast = new Axentix.Toast();
+</script>
+
+@if(Request::exists('delete'))
+<script>
+    toast.change('Utilisateur supprimé', {
+        classes: "rounded-1 red dark-4 txt-white mt-5"
+    });
+    toast.show();
+</script>
+@elseif(Request::exists('update'))
+<script>
+    toast.change('Utilisateur modifié', {
+        classes: "rounded-1 blue dark-2 txt-white mt-5"
+    });
+    toast.show();
+</script>
+@endif
 @endsection

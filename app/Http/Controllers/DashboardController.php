@@ -6,12 +6,13 @@ use App\Charts\BuildChart;
 use App\Charts\UserChart;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $users = $this->getTotalUsers();
         $userChart = $this->getUserChart();
@@ -21,7 +22,8 @@ class DashboardController extends Controller
             'users' => $users[0],
             'userCount' => $users[1],
             'userChart' => $userChart,
-            'buildChart' => $buildChart
+            'buildChart' => $buildChart,
+            'request' => $request
         ]);
     }
 
@@ -87,7 +89,9 @@ class DashboardController extends Controller
 
         $userChart->dataset('Total', 'line', $usersCount)->color('#fff')->options([
             'borderColor' => '#A7BAEB',
-            'yAxisID' => 'y-axis-1'
+            'yAxisID' => 'y-axis-1',
+
+
         ]);
         $userChart->dataset('Daily', 'line', $dailyUsers)->color('#fff')->options([
             'borderColor' => '#fff',

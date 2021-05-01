@@ -14368,6 +14368,10 @@ textarea.form-control[rows] {
   background-color: #212433;
 }
 
+.blue-txt {
+  color: #212433;
+}
+
 .bg-blue2 {
   background-color: #181c29;
 }
@@ -14405,5 +14409,6 @@ textarea.form-control[rows] {
 }
 
 #modal {
-  max-width: 300px !important;
+  max-width: 17vw !important;
+  top: 40% !important;
 }
