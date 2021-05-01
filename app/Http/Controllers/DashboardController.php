@@ -72,13 +72,13 @@ class DashboardController extends Controller
                 'yAxes' => [
                     [
                         'ticks' => ['beginAtZero' => true, 'fontColor' => '#A7BAEB'],
-                        'position' => 'left',
+                        'position' => 'right',
                         'id' => 'y-axis-1',
 
                     ],
                     [
                         'ticks' => ['beginAtZero' => true, 'fontColor' => '#fff'],
-                        'position' => 'right',
+                        'position' => 'left',
                         'id' => 'y-axis-2'
                     ],
                 ]
