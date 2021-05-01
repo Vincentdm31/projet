@@ -21,15 +21,14 @@
                 </thead>
                 <tbody>
                     @foreach($users as $user)
-                    <tr class="txt-gl4 table-row">
+                    <tr class="txt-gl4 table-row" data-href="{{ route('userStats', ['id' => $user->id]) }}" onclick="window.event.target.nodeName == 'TD' ? document.location = this.dataset.href : ''">
                         <td class="txt-grey">{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->actualMoney }}</td>
                         <td class="d-flex vcenter">
-                            <a class="btn circle blue dark-1 txt-white small mr-2" href="{{ route('userStats', ['id' => $user->id]) }}"><i class="fas fa-chart-line"></i></a>
                             <a class="btn circle airforce dark-1 txt-white small mr-2" href="{{ route('users.edit', ['user' => $user->id]) }}"><i class="fas fa-pen"></i></a>
-                            <button onclick='confirm(`{{$user->id}}`)' class="btn grey light-4 txt-red txt-dark-2 bd-solid bd-1 bd-blue circle small"><i class="fas fa-trash"></i></button>
+                            <button onclick=' confirm(`{{$user->id}}`)' class="btn grey light-4 txt-red txt-dark-2 bd-solid bd-1 bd-blue circle small"><i class="fas fa-trash"></i></button>
                         </td>
                     </tr>
                     @endforeach
@@ -45,10 +44,11 @@
 
 </div>
 
-<form class="d-flex mt-auto" id="sortByName" action=" {{route('sortBy', 'name')}}"></form>
-<form class="d-flex mt-auto" id="sortByMoney" action=" {{route('sortBy', 'actualMoney')}}"></form>
-<form class="d-flex mt-auto" id="sortByEmail" action=" {{route('sortBy', 'email')}}"></form>
-<form class="d-flex mt-auto" id="sortById" action=" {{route('sortBy', 'id')}}"></form>
+<form id="sortByName" action=" {{route('sortBy', 'name')}}"></form>
+<form id="sortByMoney" action=" {{route('sortBy', 'actualMoney')}}"></form>
+<form id="sortByEmail" action=" {{route('sortBy', 'email')}}"></form>
+<form id="sortById" action=" {{route('sortBy', 'id')}}"></form>
+
 
 <div class="modal grey light-4 rounded-1" id="modal" data-ax="modal">
     <p>Confirmer la suppression ?</p>
@@ -70,7 +70,6 @@
     }
 
     function confirm(id) {
-        console.log(id);
         Axentix.getInstance('#modal').open();
         document.getElementById('confirmlabel').value = id;
     }
