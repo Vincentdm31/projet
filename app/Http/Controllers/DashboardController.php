@@ -182,6 +182,6 @@ class DashboardController extends Controller
     {
         Artisan::call('optimize');
 
-        return redirect(route('dashboard.index'));
+        return redirect(route('/'));
     }
 }
