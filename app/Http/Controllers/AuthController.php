@@ -155,8 +155,6 @@ class AuthController extends Controller
 
         $user = User::find($userId);
 
-        $user->isFirstConnexion = false;
-
         if ($buildings) {
             $user->buildings = $buildings;
         }
