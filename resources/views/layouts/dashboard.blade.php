@@ -18,7 +18,6 @@
         <a href="{{ route('dashboard.index') }}" class="collapsible-trigger sidenav-link txt-grey txt-light-1" data-target="user-collapsible">Users</a>
         <a href="{{ route('pull') }}" class="collapsible-trigger sidenav-link txt-grey txt-light-1" data-target="user-collapsible">PULL</a>
         <a href="{{ route('mrs') }}" class="collapsible-trigger sidenav-link txt-grey txt-light-1" data-target="user-collapsible">MRS</a>
-        <a href="{{ route('optimize') }}" class="collapsible-trigger sidenav-link txt-grey txt-light-1" data-target="user-collapsible">OPTIMIZE</a>
     </div>
     <main class="bg-blue">
         @yield('content')

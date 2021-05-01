@@ -40,6 +40,5 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/pull', [DashboardController::class, 'pull'])->name('pull');
         Route::get('/mrs', [DashboardController::class, 'mrs'])->name('mrs');
-        Route::get('/optimize', [DashboardController::class, 'optimize'])->name('optimize');
     });
 });
