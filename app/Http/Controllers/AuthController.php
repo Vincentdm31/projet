@@ -64,7 +64,7 @@ class AuthController extends Controller
             ['password' => bcrypt($request->password)]
         ));
 
-        $this->login($request);
+        return $this->login($request);
     }
 
 
