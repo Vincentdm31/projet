@@ -15,7 +15,7 @@
     <div id="sidenav" data-ax="sidenav" class="sidenav shadow-1 large fixed bg-blue2">
         <p class="txt-center font-s5 txt-gl4 my-5">DASHBOARD</p>
         <div class="divider white mb-5"></div>
-        <a href="{{ route('dashboard.index') }}" class="sidenav-link txt-grey txt-dark-1">DASHBOARD</a>
+        <a href="{{ route('dashboard.index') }}" class="sidenav-link txt-grey txt-light-1">DASHBOARD</a>
 
         <a href="#" class="collapsible-trigger sidenav-link txt-grey txt-light-1" data-target="collapsible">COMMANDS</a>
         <div>
