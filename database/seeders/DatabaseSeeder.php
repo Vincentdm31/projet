@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Factory::create();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 5000; $i++) {
 
             DB::table('users')->insert(
                 [
@@ -29,11 +29,11 @@ class DatabaseSeeder extends Seeder
                     'actualMoney' => rand(0, 500000),
                     'role' => 0,
                     'buildings' => json_encode([
-                        'Tipi' => rand(0,5),
-                        'Cabane' => rand(0,5),
-                        'Maison' => rand(0,5),
-                        'Villa' => rand(0,5),
-                        'Temple' => rand(0,5),
+                        'Tipi' => rand(0, 5),
+                        'Cabane' => rand(0, 5),
+                        'Maison' => rand(0, 5),
+                        'Villa' => rand(0, 5),
+                        'Temple' => rand(0, 5),
                     ]),
                     'created_at' => Carbon::today()->subDays(rand(0, 30)),
                     'updated_at' => Carbon::now(),
