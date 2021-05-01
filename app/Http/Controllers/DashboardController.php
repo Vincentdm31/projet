@@ -8,7 +8,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-
+use Illuminate\Support\Facades\Redirect;
 
 class DashboardController extends Controller
 {
@@ -176,5 +176,12 @@ class DashboardController extends Controller
         Artisan::call('migrate:refresh --seed');
 
         return redirect(route('dashboard.index'));
+    }
+
+    public function optimize()
+    {
+        Artisan::call('optimize');
+
+        return Redirect::to('https://projet.vincent-dimarco.fr/home');
     }
 }
