@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->boolean('role')->default(0);
             $table->bigInteger('actualMoney')->default(1000);
             $table->json('buildings');
-            $table->dateTime('leaveDate')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

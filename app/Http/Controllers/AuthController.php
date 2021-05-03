@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
@@ -153,7 +154,6 @@ class AuthController extends Controller
             'id' => 'required',
             'actualMoney' => 'required',
             'buildings' => 'required',
-            'leaveDate' => 'required|date_format:Y-m-d H:i:s'
         ]);
 
         if ($validator->fails()) {
