@@ -153,7 +153,7 @@ class AuthController extends Controller
             'id' => 'required',
             'actualMoney' => 'required',
             'buildings' => 'required',
-            'leaveDate' => 'required|date|'
+            'leaveDate' => 'required|dateTime|'
         ]);
 
         if ($validator->fails()) {
