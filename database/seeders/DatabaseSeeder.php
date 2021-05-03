@@ -29,9 +29,9 @@ class DatabaseSeeder extends Seeder
                     'actualMoney' => rand(0, 500000),
                     'role' => 0,
                     'buildings' => json_encode([
-                        'Tipi' => rand(0, 5),
-                        'Cabane' => rand(0, 5),
-                        'Maison' => rand(0, 5),
+                        'Tepee' => rand(0, 5),
+                        'Hut' => rand(0, 5),
+                        'House' => rand(0, 5),
                         'Villa' => rand(0, 5),
                         'Temple' => rand(0, 5),
                     ]),
@@ -43,15 +43,15 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert(
             [
-                'name' => 'legrosdep',
+                'name' => 'Demo',
                 'email' => 'az@az.az',
                 'password' => Hash::make('azsqazsq'),
                 'actualMoney' => 1000000,
                 'role' => 1,
                 'buildings' => json_encode([
-                    'Tipi' => 10,
-                    'Cabane' => 10,
-                    'Maison' => 10,
+                    'Tepee' => 10,
+                    'Hut' => 10,
+                    'House' => 10,
                     'Villa' => 10,
                     'Temple' => 10
                 ]),

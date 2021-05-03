@@ -43,9 +43,9 @@ class User extends Authenticatable implements JWTSubject
 
     protected $attributes = [
         'buildings' => '{
-            "Tipi": 0,
-            "Cabane": 0,
-            "Maison": 0,
+            "Tepee": 0,
+            "Hut": 0,
+            "House": 0,
             "Villa": 0,
             "Temple": 0
         }'

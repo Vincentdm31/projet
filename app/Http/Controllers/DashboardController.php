@@ -104,7 +104,7 @@ class DashboardController extends Controller
     private function getBuildChart()
     {
         $buildChart = new BuildChart;
-        $buildChart->labels(['Tipi', 'Cabane', 'Maison', 'Villa', 'Temple']);
+        $buildChart->labels(['Tepee', 'Hut', 'House', 'Villa', 'Temple']);
         $buildChart->title('Total Buildings');
         $buildChart->dataset('Total', 'doughnut', [30, 54, 86, 43, 22])->backgroundColor([
             '#6289EE',
