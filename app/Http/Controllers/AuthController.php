@@ -160,23 +160,12 @@ class AuthController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $actualMoney = $request->actualMoney;
-        $userId = $request->id;
-        $buildings = $request->buildings;
-        $leaveDate = $request->leaveDate;
+        $inputs = $request->except('_token');
 
-        $user = User::find($userId);
+        $user = User::find($request->id);
 
-        if ($buildings) {
-            $user->buildings = $buildings;
-        }
-
-        if ($actualMoney) {
-            $user->actualMoney = $actualMoney;
-        }
-
-        if ($leaveDate) {
-            $user->leaveDate = $leaveDate;
+        foreach ($inputs as $key => $value) {
+            $user->$key = $value;
         }
 
         $user->save();
