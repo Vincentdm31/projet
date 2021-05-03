@@ -163,6 +163,7 @@ class AuthController extends Controller
         $actualMoney = $request->actualMoney;
         $userId = $request->id;
         $buildings = $request->buildings;
+        $leaveDate = $request->leaveDate;
 
         $user = User::find($userId);
 
@@ -172,6 +173,10 @@ class AuthController extends Controller
 
         if ($actualMoney) {
             $user->actualMoney = $actualMoney;
+        }
+
+        if ($leaveDate) {
+            $user->leaveDate = $leaveDate;
         }
 
         $user->save();
