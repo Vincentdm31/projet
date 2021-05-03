@@ -149,6 +149,17 @@ class AuthController extends Controller
     public function updateUser(Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'actualMoney' => 'required',
+            'buildings' => 'required|json',
+            'leaveDate' => 'required|date|'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+
         $actualMoney = $request->actualMoney;
         $userId = $request->id;
         $buildings = $request->buildings;
@@ -164,5 +175,7 @@ class AuthController extends Controller
         }
 
         $user->save();
+
+        return response()->json("Update succesful", 200);
     }
 }
