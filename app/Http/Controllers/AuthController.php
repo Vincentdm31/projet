@@ -152,7 +152,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'id' => 'required',
             'actualMoney' => 'required',
-            'buildings' => 'required|json',
+            'buildings' => 'required',
             'leaveDate' => 'required|date|'
         ]);
 
