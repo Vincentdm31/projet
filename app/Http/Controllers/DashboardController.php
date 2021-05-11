@@ -59,7 +59,12 @@ class DashboardController extends Controller
         $dailyUsers = [];
 
         for ($i = 14; $i >= 0; $i--) {
-            array_push($abs, Carbon::today()->subDay($i)->format('d-m-Y'));
+
+            if ($i == 0) {
+                array_push($abs, Carbon::today()->format('d-m-Y'));
+            } else {
+                array_push($abs, Carbon::today()->subDay($i)->format('d-m-Y'));
+            }
 
             array_push($dailyUsers, User::where('created_at', Carbon::today()->subDay($i))->count());
 
