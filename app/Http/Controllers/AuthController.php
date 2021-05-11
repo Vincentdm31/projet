@@ -152,15 +152,13 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'actualMoney' => 'required',
-            'buildings' => 'required',
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $inputs = $request->except('_token');
+        $inputs = $request->except('_token', 'id');
 
         $user = User::find($request->id);
 
