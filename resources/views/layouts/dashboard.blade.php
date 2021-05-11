@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 </head>
 
-<body class="layout with-sidenav fixed-sidenav relative-pos">
+<body class="layout with-sidenav fixed-sidenav relative-pos overflow-hidden">
     <div id="sidenav" data-ax="sidenav" class="sidenav shadow-1 large fixed bg-blue2">
         <p class="txt-center font-s5 txt-gl4 my-5">DASHBOARD</p>
         <div class="divider white mb-5"></div>
@@ -92,7 +92,9 @@
                     "Authorization": "key=AAAAa2AhZtE:APA91bEnQdLuaC62oj6cqdfMP_BsWcEiJzz3gJG4Eh8AFfCqYDZolQito-y51mmB-qZDPRXrWeXgZRQrqbNacO1Cgroz_6HXEgB-R81dsS7Sv_YEHvmyN4YKVY5iMf4DTUxIMnAZkcHl"
                 }
             }).then(function(response) {
-                // window.location.reload();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             }).catch(err => {
                 console.log(err);
             })
