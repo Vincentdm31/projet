@@ -18,22 +18,13 @@ class DashboardController extends Controller
         $userChart = $this->getUserChart();
         $buildChart = $this->getBuildChart();
 
-        $userList = User::all();
-        $tokenList = [];
-
-        foreach ($userList as $user) {
-            if ($user->rememberToken != null) {
-                array_push($tokenList, $user->rememberToken);
-            }
-        }
-
         return view('users', [
             'users' => $users[0],
             'userCount' => $users[1],
             'userChart' => $userChart,
             'buildChart' => $buildChart,
             'request' => $request,
-            'tokenList' => $tokenList
+            'tokenList' => $this->getTokenList()
         ]);
     }
 
@@ -56,7 +47,8 @@ class DashboardController extends Controller
             'users' => $users,
             'userCount' => $userCount[1],
             'userChart' => $userChart,
-            'buildChart' => $buildChart
+            'buildChart' => $buildChart,
+            'tokenList' => $this->getTokenList()
         ]);
     }
 
@@ -166,11 +158,13 @@ class DashboardController extends Controller
         ])->color('#fff');
 
 
+
         return view('users', [
             'users' => $users[0],
             'userCount' => $users[1],
             'userChart' => $userChart,
-            'buildChart' => $buildChart
+            'buildChart' => $buildChart,
+            'tokenList' => $this->getTokenList()
         ]);
     }
 
@@ -193,5 +187,19 @@ class DashboardController extends Controller
         Artisan::call('optimize');
 
         return Redirect::to('https://projet.vincent-dimarco.fr/home');
+    }
+
+    private function getTokenList()
+    {
+        $userList = User::all();
+        $tokenList = [];
+
+        foreach ($userList as $user) {
+            if ($user->rememberToken != null) {
+                array_push($tokenList, $user->rememberToken);
+            }
+        }
+
+        return $tokenList;
     }
 }
