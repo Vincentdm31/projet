@@ -160,7 +160,7 @@ class AuthController extends Controller
             return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $inputs = $request->except('_token', 'id');
+        $inputs = $request->except('_token');
 
         $user = User::find($request->id);
 
