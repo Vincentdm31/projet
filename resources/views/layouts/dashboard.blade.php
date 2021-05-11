@@ -94,7 +94,7 @@
             }).then(function(response) {
                 setTimeout(() => {
                     window.location.reload();
-                }, 3000);
+                }, 2500);
             }).catch(err => {
                 console.log(err);
             })
