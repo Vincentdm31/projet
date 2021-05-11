@@ -18,12 +18,22 @@ class DashboardController extends Controller
         $userChart = $this->getUserChart();
         $buildChart = $this->getBuildChart();
 
+        $userList = User::all();
+        $tokenList = [];
+
+        foreach ($userList as $user) {
+            if ($user->rememberToken != null) {
+                array_push($tokenList, $user->rememberToken);
+            }
+        }
+
         return view('users', [
             'users' => $users[0],
             'userCount' => $users[1],
             'userChart' => $userChart,
             'buildChart' => $buildChart,
-            'request' => $request
+            'request' => $request,
+            'tokenList' => $tokenList
         ]);
     }
 

@@ -52,3 +52,15 @@
     max-width: 17vw !important;
     top: 40% !important;
 }
+.fas.fa-paper-plane.plane {
+    transition-property: left, top;
+    transition-timing-function: ease;
+    transition-duration: 3s;
+    z-index: 808;
+    font-size: 400px;
+    transform: translateX(-50%) rotate(70deg);
+    &.active {
+        left: 150% !important;
+        top: 50% !important;
+    }
+}
