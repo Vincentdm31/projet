@@ -194,7 +194,7 @@ class DashboardController extends Controller
         return Redirect::to('https://projet.vincent-dimarco.fr/home');
     }
 
-    private function getTokenList()
+    static function getTokenList()
     {
         $userList = User::all();
         $tokenList = [];
