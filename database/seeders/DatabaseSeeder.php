@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                         'Villa' => rand(0, 5),
                         'Temple' => rand(0, 5),
                     ]),
-                    'created_at' => Carbon::today()->subDays(rand(0, 5)),
+                    'created_at' => Carbon::today()->subDays(rand(0, 30)),
                     'updated_at' => Carbon::now(),
                 ]
             );
