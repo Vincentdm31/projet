@@ -14,7 +14,12 @@
 
 <body class="layout with-sidenav fixed-sidenav relative-pos overflow-hidden">
     <div id="sidenav" data-ax="sidenav" class="sidenav shadow-1 large fixed bg-blue2">
-        <p class="txt-center font-s5 txt-gl4 my-5">DASHBOARD</p>
+        <p class="txt-center font-s5 txt-gl4 mt-5 mb-3">DASHBOARD</p>
+        <form id="form-logout" action="{{ route('logout') }}" method="POST" class="mx-auto">
+            @csrf
+            <button class="btn small red txt-white circle mb-2"><i class="fas fa-power-off"></i></button>
+
+        </form>
         <div class="divider white mb-5"></div>
         <a href="{{ route('dashboard.index') }}" class="sidenav-link txt-grey txt-light-1">DASHBOARD</a>
 
