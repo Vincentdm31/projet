@@ -60,24 +60,12 @@ class DashboardController extends Controller
 
         for ($i = 14; $i >= 0; $i--) {
 
-            // Si on est ajd
-            if ($i == 0) {
-                //Liste des absices
-                array_push($abs, Carbon::today()->format('d-m-Y'));
 
-                // Nombre d'users créé ajd
-                array_push($dailyUsers, User::where('created_at', Carbon::today())->count());
-
-                //Nbr total d'user d'ajd
-                array_push($usersCount, User::where('created_at', '<=', Carbon::today())->count());
-                // Les jours d'avant
-            } else {
-                array_push($abs, Carbon::today()->subDay($i)->format('d-m-Y'));
-                array_push($dailyUsers, User::where('created_at', Carbon::today()->subDay($i))->count());
-                array_push($usersCount, User::where('created_at', '<=', Carbon::today()->subDay($i))->count());
-            }
+            array_push($abs, Carbon::today()->subDay($i)->format('d-m-Y'));
+            array_push($dailyUsers, User::where('created_at', Carbon::today()->subDay($i))->count());
+            array_push($usersCount, User::where('created_at', '<=', Carbon::today()->subDay($i))->count());
         }
-        dd($abs, $usersCount, $dailyUsers);
+
 
         $userChart = new UserChart;
         $userChart->labels($abs);
