@@ -63,8 +63,7 @@ class AuthController extends Controller
         $user = User::create(array_merge(
             $validator->validated(),
             [
-                'password' => bcrypt($request->password),
-                'created_at' => "2013-04-22 12:12:12"
+                'password' => bcrypt($request->password)
             ]
         ));
 

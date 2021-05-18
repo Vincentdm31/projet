@@ -63,7 +63,6 @@ class DashboardController extends Controller
             array_push($dailyUsers, User::where('created_at', Carbon::today()->subDay($i))->count());
             array_push($usersCount, User::where('created_at', '<=', Carbon::today()->subDay($i))->count());
         }
-
         $userChart = new UserChart;
         $userChart->labels($abs);
         $userChart->title('Registered users');

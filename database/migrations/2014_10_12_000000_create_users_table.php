@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->bigInteger('actualMoney')->default(1000);
             $table->json('buildings');
             $table->string('rememberToken')->nullable();
-            $table->timestamps(5);
+            $table->date('created_at')->nullable();
+            $table->date('updated_at')->nullable();
         });
     }
 
