@@ -64,7 +64,7 @@ class AuthController extends Controller
             $validator->validated(),
             [
                 'password' => bcrypt($request->password),
-                'created_at' => Carbon::now()
+                'created_at' => "2013-04-22 12:12:12"
             ]
         ));
 
