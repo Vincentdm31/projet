@@ -34,12 +34,10 @@ Route::middleware('auth')->group(function () {
 
         Route::resource('dashboard', DashboardController::class);
 
-
         Route::get('/userstats/{id}', [DashboardController::class, 'getUserStats'])->name('userStats');
         Route::resource('users', UserController::class);
 
         Route::get('/pull', [DashboardController::class, 'pull'])->name('pull');
-        Route::get('/mrs', [DashboardController::class, 'mrs'])->name('mrs');
         Route::get('/optimize', [DashboardController::class, 'optimize'])->name('optimize');
     });
 });

@@ -45,7 +45,7 @@
 }
 
 .form-material .form-field:not(.form-default) {
-    --form-material-color: #ff7729; /* replace with your color */
+    --form-material-color: #ff7729;
 }
 
 #modal {
@@ -63,4 +63,12 @@
         left: 150% !important;
         top: 50% !important;
     }
+}
+
+.home-bg {
+    background: linear-gradient(
+        97deg,
+        rgba(40, 42, 57, 1) 10%,
+        rgba(66, 35, 40, 1) 90%
+    );
 }

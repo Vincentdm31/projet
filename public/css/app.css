@@ -14405,7 +14405,6 @@ textarea.form-control[rows] {
 
 .form-material .form-field:not(.form-default) {
   --form-material-color: #ff7729;
-  /* replace with your color */
 }
 
 #modal {
@@ -14424,4 +14423,8 @@ textarea.form-control[rows] {
 .fas.fa-paper-plane.plane.active {
   left: 150% !important;
   top: 50% !important;
+}
+
+.home-bg {
+  background: linear-gradient(97deg, #282a39 10%, #422328 90%);
 }

@@ -15,35 +15,34 @@
     @yield('extra-css')
 </head>
 
-<body class="layout grey light-4">
+<body class="bg-blue2">
     <header>
-        <nav class="navbar primary shadow-1">
-            <a href="{{ url('/') }}" class="navbar-brand">{{ config('app.name', 'Laravel') }}</a>
+        <div class="navbar-fixed">
+            <nav class="navbar txt-gl4 shadow-1">
+                <a href="{{ url('/') }}" class="navbar-brand">{{ config('app.name', 'Laravel') }}</a>
 
-            <div class="navbar-menu ml-auto">
-                @guest
+                <div class="navbar-menu ml-auto">
+                    @guest
                     <a class="navbar-link {{ Request::routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
 
                     @if (Route::has('register'))
-                        <a class="navbar-link {{ Request::routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="navbar-link {{ Request::routeIs('register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
 
-                @else
+                    @else
                     <span class="mr-2">{{ Auth::user()->name }}</span>
 
-                    <a href="{{ route('logout') }}"
-                       class="navbar-link"
-                       onclick="event.preventDefault(); document.getElementById('form-logout').submit();"
-                    >
+                    <a href="{{ route('logout') }}" class="navbar-link" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">
                         {{ __('Logout') }}
                     </a>
 
                     <form id="form-logout" action="{{ route('logout') }}" method="POST" class="hide">
                         @csrf
                     </form>
-                @endguest
-            </div>
-        </nav>
+                    @endguest
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>

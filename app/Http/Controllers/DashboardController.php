@@ -179,13 +179,6 @@ class DashboardController extends Controller
         return redirect(route('dashboard.index'));
     }
 
-    public function mrs()
-    {
-        Artisan::call('migrate:refresh --seed');
-
-        return redirect(route('dashboard.index'));
-    }
-
     public function optimize()
     {
         Artisan::call('optimize');

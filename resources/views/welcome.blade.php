@@ -16,41 +16,32 @@
 
 <body class="layout">
     <header>
-        <nav class="navbar">
-            @if(Route::has('login'))
+        <div class="navbar-fixed">
+            <nav class="navbar transparent">
+                @if(Route::has('login'))
                 <div class="navbar-menu ml-auto">
                     @auth
-                        <a href="{{ url('/home') }}" class="navbar-link">{{ __('Home') }}</a>
+                    <a href="{{ url('/home') }}" class="navbar-link">{{ __('Home') }}</a>
                     @else
-                        <a href="{{ route('login') }}" class="navbar-link">{{ __('Login') }}</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="navbar-link">{{ __('Register') }}</a>
-                        @endif
+                    <a href="{{ route('login') }}" class="navbar-link txt-gl4">{{ __('Login') }}</a>
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="navbar-link">{{ __('Register') }}</a>
+                    @endif
                     @endauth
                 </div>
-            @endif
-        </nav>
+                @endif
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <div class="d-flex h100 vcenter">
-            <div class="container">
-                <h1 class="txt-grey txt-dark-3 font-w300 txt-center">Laravel</h1>
-
-                <div class="grix xs2 sm4 lg9 center vcenter mt-3">
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://laravel.com/docs">Docs</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://laracasts.com">Laracasts</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://laravel-news.com">News</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://blog.laravel.com">Blog</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://nova.laravel.com">Nova</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://forge.laravel.com">Forge</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://vapor.laravel.com">Vapor</a>
-                    <a target="_blank" class="txt-grey txt-dark-1" href="https://github.com/laravel/laravel">GitHub</a>
-                    <a target="_blank" class="txt-grey txt-dark-1 col-xs2 col-sm4 col-lg1" href="https://useaxentix.com/">Axentix</a>
-                </div>
-            </div>
+    <main class="home-bg" style="margin-top:-3.5rem; height:100Vh;">
+        <div class="d-flex fx-col h100 fx-center vcenter">
+            <h1 class="txt-gl4">PROJET B3 2021</h1>
+            <img src="{{ asset('/img/clicker-home.png') }}" class="responsive-media" alt="" srcset="">
         </div>
     </main>
+    <script src="{{ mix('js/app.js') }}"></script>
+
 </body>
 
 </html>
